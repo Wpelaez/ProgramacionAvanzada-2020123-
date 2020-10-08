@@ -8,5 +8,7 @@ class Persona:
     def presentar(self):
         print("Hola mi nombre es: {}".format(self.nombre))
 
+    """"
     def getNombre(self):
         return self.nombre
+    """

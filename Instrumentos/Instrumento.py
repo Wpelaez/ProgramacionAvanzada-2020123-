@@ -6,7 +6,7 @@ class Instrumento(metaclass=ABCMeta):
     def afinar(self):
         pass
     @abstractmethod
-    def tocar(self):
+    def tocar(self, nota = None):
         pass
     @abstractmethod
     def tocarNota(self, nota):
