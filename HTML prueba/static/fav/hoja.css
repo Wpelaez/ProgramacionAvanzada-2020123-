@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    
+} 
+section1 h1{
+    font-style: initial;
+    color: rgb(156, 23, 18);
+    background-color: rgb(236, 223, 147);
+    padding: 1em ;
+}
+section h1 {
+    color: rgb(156, 23, 18);
+
+
+}
+h3{
+    text-align: center;
+    
+}
+h2 {
+    text-align: center;
+    }
+
+    section2 h2{
+        color: rgb(156, 23, 18);
+}
+img{
+    height: auto;
+    width: auto;
+    max-height: 400px;
+    max-width: 400px;
+    background-position: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+section1 img{
+    max-height: 100px;
+    max-width: 100px;
+    top: 1%;
+    left: 10%;
+    
+}
+body{
+    background: rgb(224, 154, 73);
+}

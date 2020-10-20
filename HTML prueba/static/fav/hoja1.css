@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+}
+h3{
+    color: rgb(240, 187, 72);
+    background-color: rgb(226, 134, 80);  
+}
+section1 h1{
+    font-style: initial;
+    color: rgb(240, 178, 44);
+    background-color: rgb(226, 134, 80);
+    padding: 1em ;
+}
+img{
+height: auto;
+width: auto;
+max-height: 120px;
+max-width: 120px;
+position: absolute;
+top: 22%;
+left: 90%;
+transform: translate(-50%);
+}

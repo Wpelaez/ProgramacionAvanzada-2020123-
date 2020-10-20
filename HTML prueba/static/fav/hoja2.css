@@ -1,0 +1,75 @@
+h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    
+} 
+h2{
+    color: ivory;
+}
+section1 h1{
+    font-style: initial;
+    color: rgb(235, 149, 37);
+    background: linear-gradient(rgb(105, 4, 34), rgb(226, 134, 80));
+    padding: 1em ;
+}
+section h1 {
+    text-align: start;
+    color: rgb(156, 23, 18);
+}
+section1 img{
+    height: auto;
+    width: auto;
+    max-height: 250px;
+    max-width: 250px;
+    background-position: center;
+    left: 50%;
+    transform: translate(110%);
+}
+section2 img{
+    height: auto;
+    width: auto;
+    max-height: 600px;
+    max-width: 600px;
+    background-position: center;
+    left: 50%;
+    transform: translate(30%);
+}
+section3 img{
+    height: auto;
+    width: auto;
+    max-height: 700px;
+    max-width: 700px;
+    background-position: center;
+    left: 40%;
+    transform: translate(3%);
+}
+section4 img{
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
+    background-position: center;
+    left: 50%;
+    transform: translate(70%);
+}
+section5 img{
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    max-width: 200px;
+    background-position: center;
+    left: 50%;
+    transform: translate(130%);
+}
+section2 h1{
+    text-align: start;
+    color: rgb(6, 50, 94);
+    font-size: 3em;
+}
+a{
+    background: oldlace;
+}
+body{
+    background: linear-gradient(rgb(221, 170, 29), rgb(190, 40, 40));
+    
+}
