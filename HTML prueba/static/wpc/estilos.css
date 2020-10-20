@@ -1,0 +1,29 @@
+h1 {
+	color: DarkBlue;
+	font-weight: bolder;
+	font-size: 3em;
+}
+
+h2 {
+	color: DarkBlue;
+	font-weight: bolder;
+	font-size: 2em;
+}
+
+ul {
+	color: Black;
+	font-weight: bolder;
+	font-size: 2em;
+
+}
+
+
+p {
+	font : impact;
+	font-size: 2em;
+	color : black;
+}
+
+nav {
+	background-color : orange;
+}

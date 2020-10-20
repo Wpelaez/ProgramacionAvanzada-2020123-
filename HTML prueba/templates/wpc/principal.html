@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Hoja De Vida</title>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='wpc/estilos.css') }}">
+	</head>
+	<body>
+		<center>
+			<h1>Hoja de Vida</h1>
+			<img src="{{ url_for('static', filename='wpc/foto.png') }}">
+			<p>Nombre: Willmar Fabian Pelaez</p>
+			<p>Codigo: 20182020123</p>
+			<hr>
+			<h2>Menu</h2>
+		</center>
+		<ul><nav>
+		
+			<li><a href="{{ url_for('wpc_datos') }}">Datos</a></li>
+			<li><a href="{{ url_for('wpc_infoe') }}">Informacion Educativa</a></li>
+			<li><a href="{{ url_for('wpc_tecno') }}">Tecnologias</a></li>
+			<li><a href="{{ url_for('index') }}">Menu Principal</a></li>
+		</nav></ul>
+		<hr>
+	</body>
+</html>
