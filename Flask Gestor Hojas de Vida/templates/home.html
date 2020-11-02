@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center>
+        <h1>Hojas de Vida</h1>
+    </center>
+    <center>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>E-mail</th>
+                <th>Genero</th>
+                <th>Ciudad</th>
+                <th colspan="3">Acciones</th>
+            </tr>
+            <tbody>
+                {% for persona in hojasdevida %}
+                <tr>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.apellido }}</td>
+                    <td>{{ persona.edad }}</td>
+                    <td>{{ persona.correo }}</td>
+                    <td>{{ persona.genero }}</td>
+                    <td>{{ persona.ciudad }}</td>
+                    <td>
+                        <form action="/actualizar" method="post">
+                            <input type="hidden" value="{{ persona.id }}" name="codigo_actualizar">
+                            <input type="submit" value="Actualizar">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/quitar" method="post">
+                            <input type="hidden" value="{{ persona.id }}" name="codigo_borrar">
+                            <input type="submit" value="Borrar">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/ver" method="post">
+                            <input type="hidden" value="{{ persona.id }}" name="ver_hojavida">
+                            <input type="submit" value="Ver">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+    <nav>
+        <ul>
+            <li><h2><a href="{{ url_for('agregar') }}">Agregar Hoja de vida</a></h2></li>
+        </ul>
+    </nav>
+</body>
+</html>

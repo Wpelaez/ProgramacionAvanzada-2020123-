@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center><h1>Agregar Hoja de Vida</h1></center>
+    <hr>
+    <form action="{{ request.path }}" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" placeholder="Nombre" required><br><br>
+        <label for="nombre_b">Segundo Nombre</label>
+        <input type="text" name="nombre_b" placeholder="Segundo Nombre"><br><br>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" placeholder="Apellido" required><br><br>
+        <label for="apellido_b">Segundo Apellido</label>
+        <input type="text" name="apellido_b" placeholder="Segundo Apellido"><br><br>
+        <label for="l_nacimiento">Lugar De Nacimiento</label>
+        <input type="text" name="l_nacimiento" placeholder="Lugar de Nacimiento"><br><br>
+        <label for="f_nacimiento">Fecha de Nacimiento</label>
+        <input type="date" name="f_nacimiento" placeholder="Fecha de Nacimiento"><br><br>
+        <label for="direccion">Direccion</label>
+        <input type="text" name="direccion" placeholder="Direccion"><br><br>
+        <label for="barrio">Barrio</label>
+        <input type="text" name="barrio" placeholder="Barrio"><br><br>
+        <label for="telefono_fijo">Telefono Fijo</label>
+        <input type="text" name="telefono_fijo" placeholder="Telefono Fijo"><br><br>
+        <label for="telefono_celu">Telefono Celular</label>
+        <input type="text" name="telefono_celu" placeholder="Telefono Celu"><br><br>
+        <label for="correo">Correo Electronico</label>
+        <input type="text" name="correo" placeholder="Correo Electronico" required><br><br>
+        <label for="edad">Edad</label>
+        <input type="text" name="edad" placeholder="Edad"><br><br>
+        <label for="genero">Genero</label>
+        <input type="text" name="genero" placeholder="Genero" required><br><br>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" placeholder="Ciudad" required><br><br>
+        <label for="photo">photo</label>
+        <input type="file" name="photo"><br><br>
+        <input type="submit" value="Subir">
+    </form>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Volver A Tabla Principal</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

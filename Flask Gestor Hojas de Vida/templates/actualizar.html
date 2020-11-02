@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center><h1>Actualizar Hoja de Vida</h1></center>
+    <hr>
+    <form action="/accion_actualizar" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" value="{{ persona.nombre }}" required><br><br>
+        <label for="nombre_b">Segundo Nombre</label>
+        <input type="text" name="nombre_b" value="{{ persona.nombre_b }}"><br><br>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" value="{{ persona.apellido }}" required><br><br>
+        <label for="apellido_b">Segundo Apellido</label>
+        <input type="text" name="apellido_b" value="{{ persona.apellido_b }}"><br><br>
+        <label for="l_nacimiento">Lugar De Nacimiento</label>
+        <input type="text" name="l_nacimiento" value="{{ persona.l_nacimiento }}"><br><br>
+        <label for="f_nacimiento">Fecha de Nacimiento</label>
+        <input type="date" name="f_nacimiento" value="{{ persona.f_nacimiento }}"><br><br>
+        <label for="direccion">Direccion</label>
+        <input type="text" name="direccion" value="{{ persona.direccion }}"><br><br>
+        <label for="barrio">Barrio</label>
+        <input type="text" name="barrio" value="{{ persona.barrio }}"><br><br>
+        <label for="telefono_fijo">Telefono Fijo</label>
+        <input type="text" name="telefono_fijo" value="{{ persona.telefono_fijo }}"><br><br>
+        <label for="telefono_celu">Telefono Celular</label>
+        <input type="text" name="telefono_celu" value="{{ persona.telefono_celu }}"><br><br>
+        <label for="correo">Correo</label>
+        <input type="text" name="correo" value="{{ persona.correo }}" required><br><br>
+        <label for="edad">Edad</label>
+        <input type="text" name="edad" value="{{ persona.edad }}"><br><br>
+        <label for="genero">Genero</label>
+        <input type="text" name="genero" value="{{ persona.genero }}" required><br><br>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" value="{{ persona.ciudad }}" required><br><br>
+        <label for="photo">Photo</label>
+        <input type="file" name="photo"><br><br>
+        {% if not (persona.photo == None) %}
+        <p>Desea Borrar Foto de su registro en la Hoja de Vida?</p>
+        <label for="borrar_foto_si">Si: </label>
+        <input type="radio" name="borrar_foto" value="1" id="borrar_foto_si" >
+        <label for="borrar_foto_no">No: </label>
+        <input type="radio" name="borrar_foto" value="0" id="borrar_foto_no" checked><br><br>
+        {% endif %}
+        <input type="submit" value="Actualizar">
+    </form>
+    <hr>
+    <form action="/actualizar_infoe" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Actualizar Informacion Academica"><br><br>
+    </form>
+    <form action="/actualizar_tecno" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Actualizar Informacion Tecnologica">
+    </form>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Volver A Tabla Principal</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

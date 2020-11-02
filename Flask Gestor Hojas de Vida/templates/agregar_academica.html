@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Informacion Academica</h1>
+    <hr>
+    <form action="/accion_agregar_academica" method="post">
+        <label for="tipo">Tipo</label>
+        <input type="text" name="tipo" placeholder="Tipo" required><br><br>
+        <label for="titulo">Titulo</label>
+        <input type="text" name="titulo" placeholder="Titulo" required><br><br>
+        <label for="institucion">Institucion</label>
+        <input type="text" name="institucion" placeholder="Institucion" required><br><br>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" placeholder="Ciudad" required><br><br>
+        <label for="year">Año</label>
+        <input type="text" name="year" placeholder="Año" required><br><br>
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Agregar Informacion Academica">
+    </form>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Volver a La tabla</a></li>
+    </ul>
+</body>
+</html>

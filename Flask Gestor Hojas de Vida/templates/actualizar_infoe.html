@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center><h1>Actualizar Informacion academica de {{ persona.nombre }} {{ persona.apellido }}</h1></center>
+    <hr>
+    <form action="/accion_actualizar_infoe" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        {% for i in range(len) %}
+        <h2>Estudios guardados {{ i+1 }}</h2>
+        <label for="tipo">Tipo</label>
+        <input type="text" name="tipo{{ i }}" value="{{ persona.academica[i].tipo }}" required><br><br>
+        <label for="titulo">Titulo</label>
+        <input type="text" name="titulo{{ i }}" value="{{ persona.academica[i].titulo }}" required><br><br>
+        <label for="institucion">Institucion</label>
+        <input type="text" name="institucion{{ i }}" value="{{ persona.academica[i].institucion }}" required><br><br>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad{{ i }}" value="{{ persona.academica[i].ciudad }}" required><br><br>
+        <label for="year">Año</label>
+        <input type="text" name="year{{ i }}" value="{{ persona.academica[i].year }}" required><br><br><br>
+        {% endfor %}
+        <hr>
+        <input type="submit" value="Actualizar"><br><br>
+    </form>
+    <form action="/agregar_academica" method="post">
+        <input type="hidden" name="codigo" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Agregar mas Informacion Academica"><br><br>
+    </form>
+    <form action="/eliminar_academica" method="post">
+        <input type="hidden" name="codigo" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Eliminar Informacion Academica"><br><br>
+    </form>
+    <form action="/actualizar" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Volver al menu Actualizar"><br><br>
+    </form>
+    <hr>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Volver a La tabla</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos_ver.css') }}">
+</head>
+<body>
+    <center>
+        <h1>Hoja de Vida</h1>
+    </center>
+    <hr>
+    <center>
+        {% if not photo == None %}
+        <img src="data:;base64,{{ photo }}" height="260px">
+        {% endif %}
+    </center>
+    <p><b>Nombre:</b> {{ persona.nombre }}</p>
+    <p><b>Segundo Nombre:</b> {{ persona.nombre_b }}</p>
+    <p><b>Apellido:</b> {{ persona.apellido }}</p>
+    <p><b>Segundo Apellido:</b> {{ persona.apellido_b }}</p>
+    <p><b>Lugar de nacimiento:</b> {{ persona.l_nacimiento }}</p>
+    <p><b>Fecha Nacimiento:</b> {{ persona.f_nacimiento }}</p>
+    <p><b>Direccion:</b> {{ persona.direccion }}</p>
+    <p><b>Barrio:</b> {{ persona.barrio }}</p>
+    <p><b>Telefono Fijo:</b> {{ persona.telefono_fijo }}</p>
+    <p><b>Telefono Celular:</b> {{ persona.telefono_celu }}</p>
+    <p><b>Correo:</b> {{ persona.correo }}</p>
+    <p><b>Edad:</b> {{ persona.edad }}</p>
+    <p><b>Genero:</b> {{ persona.genero }}</p>
+    <p><b>Ciudad:</b> {{ persona.ciudad }}</p>
+    <hr>
+    <h1>Informacion Academica</h1>
+    {% for i in persona.academica %}
+        <h3>Tipo: {{ i.tipo }}</h3>
+        <p>Titulo: {{ i.titulo }}</p>
+        <p>Institucion: {{ i.institucion }}</p>
+        <p>Ciudad: {{ i.ciudad }}</p>
+        <p>Año: {{ i.year }}</p><br>
+    {% endfor %}
+    <hr>
+    <h1>Intereses de Tecnologias</h1>
+    {% for i in persona.tecnologias %}
+        <h3>Tipo: {{ i.tipo }}</h3>
+        <p>Nombre: {{ i.nombre_tecno }}</p>
+    {% endfor %}
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Volver Tabla</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

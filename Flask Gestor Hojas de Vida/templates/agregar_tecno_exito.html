@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Informacion Tecnologica para {{ persona.nombre }} {{ persona.apellido }} </h1>
+    <hr>
+    {% for i in persona.tecnologias %}
+        <p>Tipo: {{ i.tipo }} - {{ i.nombre_tecno }}</p>
+    {% endfor %}
+    <hr>
+    <form action="/agregar_tecnologica" method="post">
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Agregar mas Informacion Tecnologica"><br><br>
+    </form>
+    <form action="/eliminar_tecnologica" method="post">
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Eliminar Info Tecnologica"><br><br>
+    </form>
+    <form action="/agregar_academica" method="post">
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Agregar Informacion Academica"><br><br>
+    </form>
+    <form action="/actualizar" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ persona.id }}">
+        <input type="submit" value="Volver al menu Actualizar"><br><br>
+    </form>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Volver a La tabla</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,21 @@
+table {
+    width: 1500px;
+}
+
+table, th, td{
+    font-size: 1.3em;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th {
+	text-align: center;
+}
+
+td {
+	text-align: left;
+}
+
+th, td{
+    padding: 15px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Se Agrego a {{ persona.nombre }} {{ persona.apellido }} </h1>
+    <hr>
+    <p>Nombre: {{ persona.nombre }}</p>
+    <p>Apellido: {{ persona.apellido }}</p>
+    <p>Edad: {{ persona.edad }}</p>
+    <p>Correo: {{ persona.correo }}</p>
+    <p>Genero: {{ persona.genero }}</p>
+    <p>Ciudad: {{ persona.ciudad }}</p>
+    <hr>
+    <form action="/agregar_academica" method="post">
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Agregar Informacion Academica"><br><br>
+    </form>
+    <form action="/agregar_tecnologica" method="post">
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Agregar Informacion Tecnologica"><br><br>
+    </form>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Volver a La tabla</a></li>
+    </ul>
+</body>
+</html>

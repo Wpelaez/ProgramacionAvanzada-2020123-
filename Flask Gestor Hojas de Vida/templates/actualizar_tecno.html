@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center><h1>Actualizar Informacion tecnologica de {{ persona.nombre }} {{ persona.apellido }}</h1></center>
+    <hr>
+    <form action="/accion_actualizar_tecno" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        {% for i in range(len) %}
+        <h2>Tecnologia Numero {{ i+1 }}</h2>
+        <label for="tipo">Tipo</label>
+        <input type="text" name="tipo{{ i }}" value="{{ persona.tecnologias[i].tipo }}" required><br><br>
+        <label for="nombre_tecno">Nombre Tecnologia</label>
+        <input type="text" name="nombre_tecno{{ i }}" value="{{ persona.tecnologias[i].nombre_tecno }}" required><br><br><br>
+        {% endfor %}
+        <hr>
+        <input type="submit" value="Actualizar"><br><br>
+    </form>
+    <form action="/agregar_tecnologica" method="post">
+        <input type="hidden" name="codigo" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Agregar mas Informacion Tecnologica"><br><br>
+    </form>
+    <form action="/eliminar_tecnologica" method="post">
+        <input type="hidden" name="codigo" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Eliminar Informacion Tecnologica"><br><br>
+    </form>
+    <form action="/actualizar" method="post">
+        <input type="hidden" name="codigo_actualizar" value="{{ codigo_antiguo }}">
+        <input type="submit" value="Volver al menu Actualizar"><br><br>
+    </form>
+    <hr>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Volver a La tabla</a></li>
+    </ul>
+</body>
+</html>

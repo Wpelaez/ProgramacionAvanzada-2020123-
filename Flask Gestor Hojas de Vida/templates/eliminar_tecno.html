@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center><h1>Eliminar Informacion Tecnologica de {{ persona.nombre }} {{ persona.apellido }}</h1></center>
+    <hr>
+    <form action="/accion_eliminar_tecnologica" method="post">
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        {% for i in range(len) %}
+        <label for="{{ persona.tecnologias[i].id }}">{{ persona.tecnologias[i].tipo }} - {{ persona.tecnologias[i].nombre_tecno }}</label>
+        <input type="checkbox" name="posicion_borrar" value="{{ i }}" id="{{ persona.tecnologias[i].id }}"><br><br>
+        {% endfor %}
+        <input type="submit" value="Borrar">
+    </form>
+    <hr>
+</body>
+</html>

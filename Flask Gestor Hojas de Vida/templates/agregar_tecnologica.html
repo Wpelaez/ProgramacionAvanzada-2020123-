@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Intereses de Tecnologias</h1>
+    <hr>
+    <form action="/accion_agregar_tecnologica" method="post">
+        <label for="tipo">Tipo</label>
+        <input type="text" name="tipo" placeholder="Que tipo de Tecnologia?" required><br><br>
+        <label for="nombre_tecno">Nombre</label>
+        <input type="text" name="nombre_tecno" placeholder="Nombre de Tecnologia?" required><br><br>
+        <input type="hidden" name="codigo" value="{{ persona.id }}">
+        <input type="submit" value="Agregar Informacion Tecnologica">
+    </form>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Volver a La tabla</a></li>
+    </ul>
+</body>
+</html>
