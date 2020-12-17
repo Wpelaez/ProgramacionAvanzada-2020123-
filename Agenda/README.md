@@ -1,6 +1,6 @@
 # Programación avanzada
 
-# Picas y Fijas Con archivo
+# Agenda con base de datos SQL
 
 Integrantes:
 - Willmar Fabian Pelaez Coronado - 20182020123	
