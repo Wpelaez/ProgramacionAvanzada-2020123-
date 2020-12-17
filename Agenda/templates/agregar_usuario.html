@@ -1,0 +1,19 @@
+{% extends "plantilla.html" %}
+{% block body %}
+
+<center><h1>Agregar Usuario</h1></center>
+<form action="{{ request.path }}" method="post">
+    <label for="usr_nick">Usuario: </label>
+    <input type="text" name="usr_nick" id="usr_nick" placeholder="User"><br><br>
+    <label for="usr_nombre">Nombre: </label>
+    <input type="text" name="usr_nombre" id="usr_nombre" placeholder="Nombre"><br><br>
+    <label for="usr_apellido">Apellido: </label>
+    <input type="text" name="usr_apellido" id="usr_apellido" placeholder="Apellido"><br><br>
+    <label for="usr_email">Email: </label>
+    <input type="text" name="usr_email" id="usr_email" placeholder="Email"><br><br>
+    <label for="usr_pass">Contraseña: </label>
+    <input type="text" name="usr_pass" id="usr_pass" placeholder="Contraseña"><br><br>
+    <input type="submit" value="Subir">
+</form>
+
+{% endblock %}

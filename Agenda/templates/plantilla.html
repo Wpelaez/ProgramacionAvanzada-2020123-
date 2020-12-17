@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <nav>
+                <a href="{{ url_for('index') }}"><h2>Tabla Usuario</h2></a>
+                <a href="{{ url_for('contactos') }}"><h2>Tabla Contactos</h2></a>
+                <a href="{{ url_for('citas') }}"><h2>Tabla Citas</h2></a>
+    </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

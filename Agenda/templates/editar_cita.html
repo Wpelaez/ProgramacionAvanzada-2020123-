@@ -1,0 +1,28 @@
+{% extends "plantilla.html "%}
+{% block body %}
+
+<center><h1>Editar Cita</h1></center>
+<form action="{{ request.path }}" method="post">
+    <label for="con_id">Contacto: </label>
+    <select name="con_id" id="con_id">
+        {% for contacto in contactos %}
+            {% if contacto[0] == cita[1] %}
+                <option value="{{ contacto[0] }}" selected>{{ contacto[2] }} {{ contacto[3] }}</option>
+            {% else %}
+                <option value="{{ contacto[0] }}">{{ contacto[2] }} {{ contacto[3] }}</option>
+            {% endif %}
+        {% endfor %}
+    </select><br><br>
+    <label for="cit_lugar">Lugar Cita: </label>
+    <input type="text" name="cit_lugar" id="cit_lugar" value="{{ cita[2] }}"><br><br>
+    <label for="cit_fecha">Fecha Cita: </label>
+    <input type="date" name="cit_fecha" id="cit_fecha" value="{{ cita[3] }}"><br><br>
+    <label for="cit_hora">Hora Cita: </label>
+    <input type="time" name="cit_hora" id="cit_hora" value="{{ cita[4] }}"><br><br>
+    <label for="cit_descripcion">Descripcion Cita: </label>
+    <input type="text" name="cit_descripcion" id="cit_descripcion" value="{{ cita[5] }}"><br><br>
+    <input type="submit" value="Actualizar Cita">
+</form>
+
+
+{% endblock %}

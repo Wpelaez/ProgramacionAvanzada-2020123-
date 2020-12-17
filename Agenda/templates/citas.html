@@ -1,0 +1,68 @@
+{% extends "plantilla.html" %}
+{% block body %}
+    <center>
+        <h1>Tabla Citas</h1>
+        {% with mensajes = get_flashed_messages() %}
+            {% if mensajes %}
+                {% for mensaje in mensajes %}
+                    <h2>{{ mensaje }}</h2>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <table>
+            <thead>
+                <tr>
+                    <th><p>Contacto de Usuario</p></th>
+                    <th><p>Nombre</p></th>
+                    <th><p>Apellido</p></th>
+                    <th><p>Email</p></th>
+                    <th><p>Lugar</p></th>
+                    <th><p>Fecha</p></th>
+                    <th><p>Hora</p></th>
+                    <th><p>Descripcion</p></th>
+                    <th colspan="2"><p>Acciones</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cita in citas %}
+                <tr>
+                    {% for usuario in usuarios %}
+                        {% if usuario[0] == cita[1] %}
+                            <td><p>{{ usuario[1] }}</p></td>
+                        {% endif %}
+                    {% endfor %}
+                    <td><p>{{ cita[2] }}</p></td>
+                    <td><p>{{ cita[3] }}</p></td>
+                    <td><p>{{ cita[4] }}</p></td>
+                    <td><p>{{ cita[5] }}</p></td>
+                    <td><p>{{ cita[6] }}</p></td>
+                    <td><p>{{ cita[7] }}</p></td>
+                    <td><p>{{ cita[8] }}</p></td>
+                    <td>
+                        <a href="/editar_cita/{{ cita[0] }}">
+                            <p>Editar Cita</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/eliminar_cita/{{ cita[0] }}">
+                            <p>Eliminar Cita</p>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+    <hr>
+    <ul>
+        <li>
+            <a href="/agregar_cita/{{ 'no_id' }}">Agregar Cita</a>
+        </li>
+        <li>
+            <a href="{{ url_for('index') }}">Volver A Tabla Usuarios</a>
+        </li>
+        <li>
+            <a href="{{ url_for('contactos') }}">Volver A Tabla Contactos</a>
+        </li>
+    </ul>
+{% endblock %}

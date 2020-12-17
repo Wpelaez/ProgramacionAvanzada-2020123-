@@ -1,0 +1,29 @@
+{% extends "plantilla.html "%}
+{% block body %}
+
+<center><h1>Contactos Admin</h1></center>
+
+<form action="{{ request.path }}" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Check</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contacto in contactos %}
+            <tr>
+                <td>{{ contacto[3] }}</td>
+                <td>{{ contacto[2] }}</td>
+                <td><input type="checkbox" name="IDs_Para_Agregar" value="{{ contacto[0] }}" id="{{ contacto[0] }}"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <input type="submit" value="Agregar Contactos">
+</form>
+
+{% endblock %}

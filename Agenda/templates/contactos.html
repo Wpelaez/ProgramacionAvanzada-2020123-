@@ -1,0 +1,62 @@
+{% extends "plantilla.html" %}
+{% block body %}
+
+<center>
+    <h1>Tabla Contactos</h1>
+        {% with mensajes = get_flashed_messages() %}
+            {% if mensajes %}
+                {% for mensaje in mensajes %}
+                    <h2>{{ mensaje }}</h2>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <table>
+        <thead>
+            <th><p>Usuario</p></th>
+            <th colspan="5"><p>Contacto</p></th>
+            <th colspan="3"><p>Acciones</p></th>
+        </thead>
+        <tbody>
+            {% for contacto in contactos %}
+                <tr>
+                    <td><p>{{ contacto[1] }}</p></td>
+                    <td><p>{{ contacto[2] }}</p></td>
+                    <td><p>{{ contacto[3] }}</p></td>
+                    <td><p>{{ contacto[4] }}</p></td>
+                    <td><p>{{ contacto[5] }}</p></td>
+                    <td><p>{{ contacto[6] }}</p></td>
+                    <td>
+                        <a href="/agregar_cita/{{ contacto[0] }}">
+                            <p>Agregar Cita</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/editar_contacto/{{ contacto[0] }}">
+                            <p>Editar Contacto</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/eliminar_contacto/{{ contacto[0] }}">
+                            <p>Eliminar Contacto</p>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+<hr>
+        <ul>
+            <li>
+                <a href="/agregar_contacto/{{ 'no_id' }}">
+                    Agregar Contacto
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('index') }}">Ver Tabla Usuarios</a>
+            </li>
+            <li>
+                <a href="{{ url_for('citas') }}">Ver Tabla Citas</a>
+            </li>
+        </ul>
+{% endblock %}

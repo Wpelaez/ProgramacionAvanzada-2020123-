@@ -1,0 +1,34 @@
+{% extends "plantilla.html "%}
+{% block body %}
+
+<center><h1>Agregar Contacto</h1></center>
+<form action="{{ request.path }}" method="post">
+    {% if id == "no_id" %}
+        <label for="usr_id">Usuario: </label>
+        <select name="usr_id" id="usr_id">
+            {% for usuario in usuarios %}
+                <option value="{{ usuario[0] }}">{{ usuario[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+    {% else %}
+        {% if id != "1" %}
+            <a href="/contactos_admin/{{ id }}">
+                <p>Agregar Contactos de Usuario Admin</p>
+            </a>
+        {% endif %}
+    {% endif %}
+    <label for="con_nombre">Nombre Contacto: </label>
+    <input type="text" name="con_nombre" id="con_nombre" placeholder="Nombre Contacto"><br><br>
+    <label for="con_apellido">Apellido Contacto: </label>
+    <input type="text" name="con_apellido" id="con_apellido" placeholder="Apellido Contacto"><br><br>
+    <label for="con_direccion">Direccion Contacto: </label>
+    <input type="text" name="con_direccion" id="con_direccion" placeholder="Direccion Contacto"><br><br>
+    <label for="con_telefono">Telefono Contacto: </label>
+    <input type="text" name="con_telefono" id="con_telefono" placeholder="Telefono Contacto"><br><br>
+    <label for="con_email">Email Contacto: </label>
+    <input type="text" name="con_email" id="con_email" placeholder="Email Contacto"><br><br>
+    <input type="submit" value="Agregar Contacto">
+</form>
+
+
+{% endblock %}

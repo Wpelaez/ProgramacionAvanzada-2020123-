@@ -1,0 +1,19 @@
+{% extends "plantilla.html" %}
+{% block body %}
+
+<center><h1>Editar Usuario</h1></center>
+<form action="{{ request.path }}" method="post">
+    <label for="usr_nick">Usuario: </label>
+    <input type="text" name="usr_nick" id="usr_nick" value="{{ usuario[1] }}"><br><br>
+    <label for="usr_nombre">Nombre: </label>
+    <input type="text" name="usr_nombre" id="usr_nombre" value="{{ usuario[2] }}"><br><br>
+    <label for="usr_apellido">Apellido: </label>
+    <input type="text" name="usr_apellido" id="usr_apellido" value="{{ usuario[3] }}"><br><br>
+    <label for="usr_email">Email: </label>
+    <input type="text" name="usr_email" id="usr_email" value="{{ usuario[4] }}"><br><br>
+    <label for="usr_pass">Clave: </label>
+    <input type="password" name="usr_pass" id="usr_pass" placeholder="Password"><br><br>
+    <input type="submit" value="Actualizar">
+</form>
+
+{% endblock %}

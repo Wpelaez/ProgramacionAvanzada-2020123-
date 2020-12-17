@@ -1,0 +1,30 @@
+{% extends "plantilla.html" %}
+{% block body %}
+
+<center><h1>Editar Contacto</h1></center>
+<form action="{{ request.path }}" method="post">
+    <label for="usr_id">Usuario: </label>
+    <select name="usr_id" id="usr_id">
+        {% for usuario in usuarios %}
+            {% if usuario[0] == contacto[1] %}
+                <option value="{{ usuario[0] }}" selected>{{ usuario[1] }}</option>
+            {% else %}
+                <option value="{{ usuario[0] }}">{{ usuario[1] }}</option>
+            {% endif %}
+        {% endfor %}
+    </select><br><br>
+    <label for="con_nombre">Nombre Contacto: </label>
+    <input type="text" name="con_nombre" id="con_nombre" value="{{ contacto[2] }}"><br><br>
+    <label for="con_apellido">Apellido Contacto: </label>
+    <input type="text" name="con_apellido" id="con_apellido" value="{{ contacto[3] }}"><br><br>
+    <label for="con_direccion">Direccion Contacto: </label>
+    <input type="text" name="con_direccion" id="con_direccion" value="{{ contacto[4] }}"><br><br>
+    <label for="con_telefono">Telefono Contacto: </label>
+    <input type="text" name="con_telefono" id="con_telefono" value="{{ contacto[5] }}"><br><br>
+    <label for="con_email">Email Contacto: </label>
+    <input type="text" name="con_email" id="con_email" value="{{ contacto[6] }}"><br><br>
+
+    <input type="submit" value="Actualizar">
+</form>
+
+{% endblock %}

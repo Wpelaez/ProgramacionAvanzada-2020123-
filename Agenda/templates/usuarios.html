@@ -1,0 +1,61 @@
+{% extends "plantilla.html "%}
+{% block body %}
+    <center>
+        <h1>Tabla Usuarios</h1>
+        {% with mensajes = get_flashed_messages() %}
+            {% if mensajes %}
+                {% for mensaje in mensajes %}
+                    <h2>{{ mensaje }}</h2>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <table>
+            <thead>
+                <tr>
+                    <th><p>Usuario</p></th>
+                    <th><p>Nombre</p></th>
+                    <th><p>Apellido</p></th>
+                    <th><p>Email</p></th>
+                    <th colspan="3"><p>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td><p>{{ usuario[1] }}</p></td>
+                        <td><p>{{ usuario[2] }}</p></td>
+                        <td><p>{{ usuario[3] }}</p></td>
+                        <td><p>{{ usuario[4] }}</p></td>
+                        <td>
+                            <a href="/agregar_contacto/{{ usuario[0] }}">
+                                <p>Agregar Contacto</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/editar_usuario/{{ usuario[0] }}">
+                                <p>Editar Usuario</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/eliminar_usuario/{{ usuario[0] }}">
+                                <p>Eliminar Usuario</p>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+    <hr>
+        <ul>
+            <li>
+                <a href="{{ url_for('agregar_usuario') }}">Agregar Usuario</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contactos') }}">Ver Tabla Contactos</a>
+            </li>
+            <li>
+                <a href="{{ url_for('citas') }}">Ver tabla Citas</a>
+            </li>
+        </ul>
+{% endblock %}
