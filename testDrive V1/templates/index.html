@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for archivo in archivos %}
+                    <tr>
+                        <td>{{ archivo['title'] }}</td>
+                        {% if archivo['mimeType'] == "application/vnd.google-apps.folder" %}
+                            <td>Carpeta</td>
+                        {% else %}
+                            <td>Archivo</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+    <nav>
+        <h2>Acciones</h2>
+        <ul>
+            <li>
+                <a href="{{ url_for('addCarpeta') }}">
+                   <p>Añadir Carpeta</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('subirArchivo') }}">
+                    <p>Subir Archivo</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

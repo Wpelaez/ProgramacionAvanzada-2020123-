@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carpeta</title>
+</head>
+<body>
+    <center>
+        <div id="formCarpeta" style="width: 500px; height: 250px; border-style: solid;">
+            <form action="{{ request.path }}" method="post" style="padding-top: 80px;">
+                <label for="nombreCarpeta">Nombre Carpeta</label>
+                <input type="text" id="nombreCarpeta" name="nombreCarpeta" placeholder="Nombre Carpeta" required><br>
+                <input type="submit" value="Añadir Carpeta" style="margin-top: 50px;">
+            </form>
+        </div>
+    </center>
+</body>
+</html>

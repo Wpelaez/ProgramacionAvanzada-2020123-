@@ -1,0 +1,30 @@
+table {
+    width: 500px;
+}
+
+table, th, td{
+    font-size: 1.1em;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+thead{
+    font-size: 1.1em;
+    background-color: Silver;
+}
+
+th {
+	text-align: center;
+}
+
+th, td{
+    padding: 10px;
+}
+
+div {
+    padding-bottom: 4px;
+}
+
+#borrarTodo {
+    padding-top: 4px;
+}

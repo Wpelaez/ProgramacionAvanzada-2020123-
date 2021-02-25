@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Archivo</title>
+</head>
+<body>
+    <center>
+        <div id="formArchivo" style="width: 500px; height: 250px; border-style: solid;">
+            <form action="{{ request.path }}" method="post" enctype="multipart/form-data" style="padding-top: 80px;">
+                <label for="archivo">Subir Archivo: </label>
+                <input type="file" id="archivo" name="archivo" required><br>
+                <input type="submit" value="Subir Archivo" style="margin-top: 50px;">
+            </form>
+        </div>
+    </center>
+</body>
+</html>
